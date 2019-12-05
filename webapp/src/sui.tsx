@@ -430,6 +430,7 @@ export interface ButtonProps extends UiProps, TooltipUIProps {
     color?: string;
     size?: SIZES;
     autoFocus?: boolean;
+    dataTooltip?: string;
 }
 
 export class Button extends StatelessUIElement<ButtonProps> {
@@ -452,6 +453,7 @@ export class Button extends StatelessUIElement<ButtonProps> {
             onClick={this.props.onClick}
             onKeyDown={this.props.onKeyDown}
             autoFocus={this.props.autoFocus}
+            data-tooltip={this.props.dataTooltip}
         >
             {genericContent(this.props)}
             {this.props.children}

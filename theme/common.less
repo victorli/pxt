@@ -131,6 +131,10 @@ pre {
     bottom: 0rem !important;
 }
 
+.hw-button {
+    width: 4rem;
+}
+
 #filelistOverlay {
     position: absolute;
     left: 0;
@@ -173,8 +177,12 @@ pre {
 
 #downloadArea {
     margin-top: 0 !important;
-    padding-top: 0.55rem;
+    padding: .55rem 1rem;
     background-color: @simulatorBackground;
+}
+
+#downloadArea > .ui, #downloadArea .download-button {
+    width: 100%;
 }
 
 .transparentEditorTools #downloadArea {
@@ -972,7 +980,7 @@ p.ui.font.small {
         }
     }
 }
-
+  
 /*******************************
         Media Adjustments
 *******************************/
@@ -1047,6 +1055,10 @@ p.ui.font.small {
     .collapsedEditorTools.headless #maineditor {
         left: 0;
     }
+
+    #editortools {
+        z-index: @simulatorZIndex + 1;
+    }
 }
 
 /* <= Small Monitor (Mobile + Tablet + Small Monitor) */
@@ -1108,6 +1120,18 @@ p.ui.font.small {
         width: 10rem; /* match width of div.simframe */
         height: 9rem;
     }
+
+    #downloadArea {
+        min-width: auto;
+        max-width: none;
+        background-color: transparent;
+        padding: 0 0 1rem;
+    }
+
+    .twoRow #editorProjectArea {
+        margin-left: 18rem;
+    }
+
     #root:not(.fullscreensim):not(.headless) {
         #boardview {
             position: absolute;
@@ -1213,9 +1237,13 @@ p.ui.font.small {
     .hideEditorFloats .editorFloat {
         display:none;
     }
-    #downloadArea {
-        display: none;
+    #projectNameArea .projectname-input {
+        display: flex;
     }
+    #projectNameArea .projectname-input > input {
+        flex: 1;
+    }
+
     /* Menu spacing */
     #root:not(.sandbox) .menubar .ui.menu .item {
         padding: 0.3em !important;

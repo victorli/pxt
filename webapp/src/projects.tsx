@@ -1113,7 +1113,7 @@ export class ChooseHwDialog extends data.Component<ISettingsProps, ChooseHwDialo
         }, { interactiveConsent: true });
         this.hide()
 
-        pxt.setHwVariant(cfg.name)
+        pxt.setHwVariant(cfg.name, card.name)
         let editor = this.props.parent
         editor.reloadHeaderAsync()
             .then(() => editor.compile())
