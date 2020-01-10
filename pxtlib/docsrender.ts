@@ -72,6 +72,10 @@ namespace pxt.docs {
         {
             rx: /^(www\.youtube\.com\/watch\?v=|youtu\.be\/)([\w\-]+(\#t=([0-9]+m[0-9]+s|[0-9]+m|[0-9]+s))?)/i,
             cmd: "### @youtube $2"
+        },
+        {
+            rx: /^(.*)\.mp4$/i,
+            cmd: "### @video $1"
         }
     ]
 
